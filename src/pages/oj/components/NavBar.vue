@@ -23,14 +23,14 @@
           <Icon type="md-podium"></Icon>
           {{$t('m.Rank')}}
         </template>
+        <Menu-item name="/experience-rank">
+          {{$t('m.Experience_Ranklist')}}
+        </Menu-item>
         <Menu-item name="/acm-rank">
           {{$t('m.ACM_Rank')}}
         </Menu-item>
         <Menu-item name="/oi-rank">
           {{$t('m.OI_Rank')}}
-        </Menu-item>
-        <Menu-item name="/experience-rank">
-          {{$t('m.Experience_Ranklist')}}
         </Menu-item>
       </Submenu>
       <Submenu name="onlineapp">
@@ -38,11 +38,11 @@
           <Icon type="ios-cloud" />
           {{$t('m.App')}}
         </template>
-        <Menu-item name="/IDE">
-          {{$t('m.IDE')}}
-        </Menu-item>
         <Menu-item v-if="website.allow_forum_post" name="/Forum">
           {{$t('m.Forum')}}
+        </Menu-item>
+        <Menu-item name="/IDE">
+          {{$t('m.IDE')}}
         </Menu-item>
       </Submenu>
       <Submenu name="about">
@@ -64,15 +64,15 @@
       <Dropdown @on-click="switchChange" class="ivu-menu-submenu">
         <div>
 		  <Icon type="ios-browsers"></Icon>
-		  &emsp;换肤
+		  &emsp;换颜色
           <Icon type="ios-arrow-down"></Icon>
         </div>
         <DropdownMenu slot="list">
-          <DropdownItem name="1"><Icon type="ios-browsers" color="#2d8cf0" />&emsp;胖次蓝</DropdownItem>
-          <DropdownItem name="2"><Icon type="ios-browsers" color="#f58f98" />&emsp;少女粉</DropdownItem>
-	        <DropdownItem name="4"><Icon type="ios-browsers" color="#d63031" />&emsp;姨妈红</DropdownItem>
-		      <DropdownItem name="5"><Icon type="ios-browsers" color="#00b894" />&emsp;原谅绿</DropdownItem>
-          <DropdownItem name="3"><Icon type="ios-browsers" color="#673AB7" />&emsp;基佬紫</DropdownItem>
+          <DropdownItem name="1"><Icon type="ios-browsers" color="#2d8cf0" />&emsp;布鲁蓝</DropdownItem>
+          <DropdownItem name="2"><Icon type="ios-browsers" color="#f58f98" />&emsp;拼客粉</DropdownItem>
+	        <DropdownItem name="4"><Icon type="ios-browsers" color="#d63031" />&emsp;热得红</DropdownItem>
+		      <DropdownItem name="5"><Icon type="ios-browsers" color="#00b894" />&emsp;乐语绿</DropdownItem>
+          <DropdownItem name="3"><Icon type="ios-browsers" color="#673AB7" />&emsp;铺跑紫</DropdownItem>
         </DropdownMenu>
       </Dropdown>
 
@@ -93,7 +93,7 @@
       </template>
       <template v-else>
         <Dropdown class="drop-menu" @on-click="handleRoute" placement="bottom" trigger="click">
-          <Poptip trigger="hover" :title="`当前 ${ profile.grade } 级`" :content="`当前稳点： ${ profile.experience } 点`" width="200px">
+          <Poptip trigger="hover" :title="`当前 ${ profile.grade } 级`" :content="`当前分数： ${ profile.experience } 点`" width="200px">
             <Tag v-if="profile.user.title" :color="profile.user.title_color" style="margin-right:-15px;">{{ profile.user.title }}</Tag>
             <Tag v-else :color="color" style="margin-right:-15px;">{{ gradename }}</Tag>
           </Poptip>
